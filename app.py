@@ -19,25 +19,12 @@ def after_request(response):
 
 @app.route("/", methods=["GET"])
 def index():
-    return jsonify(
+    return json.dumps(
         { "slackUsername": "Nimi", 
             "backend": True,
             "age": 23,
             "bio":  "I am Alabi Yetunde. A backend HNG intern. I'm passionate about software development."
         }, sort_keys=False)
-
-@app.route("/user", methods=["GET"])
-def user():
-    name = request.args.get("slackUsername", type=str)
-    backend = request.args.get("backend", default=False, type=lambda v: v.upper() == "true")
-    age = request.args.get("age", type=int)
-    bio = request.args.get("bio", type=str)
-    return jsonify(
-        { "slackUsername": name, 
-            "backend": backend,
-            "age": age,
-            "bio": bio 
-        })
 
 if __name__ == "__main__":
     app.run(debug=True)
