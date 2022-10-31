@@ -9,7 +9,6 @@ app = Flask(__name__)
 dotenv_path = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(dotenv_path)
 
-database_filename = os.getenv('DATABASE_NAME')
 cors = CORS(app)
 @app.after_request
 def after_request(response):
@@ -17,7 +16,7 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Headers', 'GET, POST, PATCH, DELETE, OPTIONS')
     return response
 
-@app.route("/")
+@app.route("/"
 def index():
     return json.dumps(
         { "slackUsername": "Nimi", 
