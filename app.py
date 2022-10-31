@@ -24,7 +24,7 @@ def index():
             "backend": True,
             "age": 23,
             "bio":  "I am Alabi Yetunde. A backend HNG intern. I'm passionate about software development."
-        }, 200,{"content-type": "application/json"},sort_keys=False)
+        }, sort_keys=False), 200, {"content-type": "application/json"}
 
 if __name__ == "__main__":
     app.run(debug=True)
