@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 from flask_cors import CORS
 from dotenv import load_dotenv
 import os
@@ -24,7 +24,7 @@ def index():
             "backend": True,
             "age": 23,
             "bio":  "I am Alabi Yetunde. A backend HNG intern. I'm passionate about software development."
-        }, sort_keys=False)
+        }, 200,{"content-type": "application/json"},sort_keys=False)
 
 if __name__ == "__main__":
     app.run(debug=True)
