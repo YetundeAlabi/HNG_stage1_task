@@ -17,7 +17,7 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Headers', 'GET, POST, PATCH, DELETE, OPTIONS')
     return response
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def index():
     return json.dumps(
         { "slackUsername": "Nimi", 
